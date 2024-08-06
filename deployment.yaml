@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dizest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dizest
+  template:
+    metadata:
+      labels:
+        app: dizest
+    spec:
+      containers:
+      - name: dizest
+        image: kwon3286/dizest:latest
+        ports:
+        - containerPort: 4000
